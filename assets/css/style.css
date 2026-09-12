@@ -376,30 +376,24 @@ main { position: relative; z-index: 2; }
 }
 .agent-lede { margin-top: 28px; color: var(--text-dim); font-size: 16.5px; }
 
-/* 倒计时 */
-.countdown {
-  display: flex; align-items: flex-start; justify-content: center; gap: 8px;
-  margin: 62px 0 14px;
-}
-.cd-item {
-  min-width: 108px; padding: 20px 12px 15px; border-radius: var(--r-lg);
+/* 发布状态条 */
+.release-status {
+  display: flex; align-items: stretch; justify-content: center;
+  gap: 0; margin: 58px auto 0; width: fit-content; max-width: 100%;
+  padding: 0; border-radius: var(--r-lg);
   border: 1px solid var(--border); background: var(--surface);
   -webkit-backdrop-filter: var(--glass); backdrop-filter: var(--glass);
-  text-align: center; box-shadow: var(--shadow);
+  box-shadow: var(--shadow); overflow: hidden; flex-wrap: wrap;
 }
-.cd-item b {
-  display: block; font-size: clamp(30px, 4.4vw, 44px); font-weight: 620;
-  letter-spacing: -.03em; font-variant-numeric: tabular-nums;
-  background: linear-gradient(140deg, var(--a1), var(--a2));
+.rs-item { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 20px 38px; }
+.rs-label { font-family: var(--mono); font-size: 10px; letter-spacing: .24em; color: var(--text-faint); }
+.rs-value {
+  font-size: 19px; font-weight: 600; letter-spacing: -.01em;
+  background: linear-gradient(120deg, var(--a1), var(--a2));
   -webkit-background-clip: text; background-clip: text; color: transparent;
 }
-.cd-item span { font-size: 11px; letter-spacing: .24em; color: var(--text-faint); font-family: var(--mono); }
-.countdown em { font-style: normal; font-size: 24px; color: var(--text-faint); line-height: 2.4; }
-.cd-note { text-align: center; font-size: 12.5px; color: var(--text-faint); }
-.cd-note code {
-  font-family: var(--mono); font-size: 11.5px; padding: 2px 6px; border-radius: 5px;
-  background: var(--code-bg); color: var(--text-dim);
-}
+.rs-sep { width: 1px; background: var(--border); margin: 18px 0; }
+.rs-note { text-align: center; margin-top: 20px; font-size: 13px; color: var(--text-faint); letter-spacing: .02em; }
 
 /* 能力卡 */
 .cap-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr)); gap: 18px; margin-top: 76px; }
@@ -630,9 +624,9 @@ main { position: relative; z-index: 2; }
   .section { padding: 86px 0; }
   .hero-stats { gap: 26px; }
   .hero-stats b { font-size: 26px; }
-  .countdown { gap: 4px; }
-  .cd-item { min-width: 74px; padding: 15px 8px 12px; }
-  .countdown em { display: none; }
+  .release-status { flex-direction: column; width: 100%; border-radius: var(--r-md); }
+  .rs-item { padding: 16px 20px; flex-direction: row; justify-content: space-between; width: 100%; }
+  .rs-sep { width: auto; height: 1px; margin: 0 20px; }
   .roadmap::before { display: none; }
   .rm-item { padding: 18px 0 18px 22px; border-left: 1px solid var(--border); }
   .rm-dot { top: 24px; left: -6px; }

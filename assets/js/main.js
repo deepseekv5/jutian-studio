@@ -5,9 +5,6 @@
 (function () {
   'use strict';
 
-  /* ---------- 巨天 Agent 发布时间（改这里） ---------- */
-  var RELEASE_DATE = '2026-12-31T20:00:00+08:00';
-
   /* ---------- 项目数据（新增项目直接往数组里加即可） ---------- */
   var PROJECTS = [
     {
@@ -147,31 +144,6 @@
       });
     });
   }
-
-  /* ===================== 倒计时 ===================== */
-  var cd = {
-    d: document.getElementById('cdD'), h: document.getElementById('cdH'),
-    m: document.getElementById('cdM'), s: document.getElementById('cdS')
-  };
-  var target = new Date(RELEASE_DATE).getTime();
-
-  function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-  function tick() {
-    if (!cd.d) return;
-    var diff = target - Date.now();
-    if (diff <= 0) {
-      cd.d.textContent = '00'; cd.h.textContent = '00';
-      cd.m.textContent = '00'; cd.s.textContent = '00';
-      return;
-    }
-    var s = Math.floor(diff / 1000);
-    cd.d.textContent = pad(Math.floor(s / 86400));
-    cd.h.textContent = pad(Math.floor(s % 86400 / 3600));
-    cd.m.textContent = pad(Math.floor(s % 3600 / 60));
-    cd.s.textContent = pad(s % 60);
-  }
-  if (cd.d) { tick(); setInterval(tick, 1000); }
 
   /* ===================== 主题切换 ===================== */
   var root = document.documentElement;

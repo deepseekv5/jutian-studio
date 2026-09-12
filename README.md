@@ -26,8 +26,8 @@ python3 -m http.server 8123
 
 | 想改什么 | 改哪儿 |
 | --- | --- |
-| 巨天 Agent 发布日期 | `assets/js/main.js` 顶部 `RELEASE_DATE` |
 | 项目列表 | `assets/js/main.js` 里的 `PROJECTS` 数组 |
+| 巨天 Agent 发布状态文案 | `index.html` 中 `.release-status` 区块 |
 | 配色 / 主题变量 | `assets/css/style.css` 顶部 `:root` 与 `[data-theme]` 块 |
 | 联系邮箱 | `index.html` 联系区底部注释掉的 mailto 按钮 |
 
