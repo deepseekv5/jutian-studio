@@ -1,38 +1,32 @@
-# 巨天工作室官网 · JUTIAN STUDIO
+# 巨天工作室官网
 
-巨天工作室官方网站源码，纯静态站点，无需构建，直接用 GitHub Pages 托管。
+纯静态站点，GitHub Pages 托管：<https://deepseekv5.github.io/jutian-studio/>
 
-在线地址：<https://deepseekv5.github.io/jutian-studio/>
+## 设计说明
 
-## 目录结构
+编辑排版风格：纸感底色、1px 细线分隔、衬线标题、强网格。
+不使用渐变、玻璃拟态、粒子动画、悬浮卡等装饰性元素。深浅双主题，默认浅色。
+
+## 目录
 
 ```
-.
-├── index.html              # 单页站点
-├── assets/
-│   ├── css/style.css       # 全部样式（含深/浅双主题变量）
-│   └── js/main.js          # 交互脚本（项目卡片、倒计时、粒子背景等）
-└── README.md
+index.html
+assets/css/style.css
+assets/js/main.js      # 主题切换、移动端菜单、导航高亮（约 40 行）
 ```
 
-## 本地预览
+## 改内容
 
-```bash
-python3 -m http.server 8123
-# 打开 http://127.0.0.1:8123
-```
-
-## 常见修改
+全部文案直接写在 `index.html` 里，没有模板引擎、没有构建步骤。
 
 | 想改什么 | 改哪儿 |
 | --- | --- |
-| 项目列表 | `assets/js/main.js` 里的 `PROJECTS` 数组 |
-| 巨天 Agent 发布状态文案 | `index.html` 中 `.release-status` 区块 |
-| 配色 / 主题变量 | `assets/css/style.css` 顶部 `:root` 与 `[data-theme]` 块 |
-| 联系邮箱 | `index.html` 联系区底部注释掉的 mailto 按钮 |
+| 站点信息 | `index.html` 顶部 `<head>` 的 title / description |
+| 强调色 | `assets/css/style.css` 中 `--accent`（浅色 `#a8361f`，深色 `#e2775a`） |
+| 章节 | 每个 `<section class="section" id="...">`，同步改页眉导航与目录块 |
+| 项目 | 「项目」章节里的 `<article class="entry">` |
 
-改完 push 到 `main` 分支，GitHub Pages 会自动重新部署。
+## 相关
 
----
-
-© 巨天工作室 · JUTIAN STUDIO
+- 个人主页：<https://deepseekv5.github.io/>
+- 巨天 Agent：<https://deepseekv5.github.io/jutian-agent/>
