@@ -51,6 +51,41 @@
       q1: '你们是家公司吗？（不是）', q2: '为什么不收费？（因为也没人买）', q3: 'Agent 到底什么时候能下载？',
       contact1: '想法、Bug、合作邀约都发 GitHub。我看每一条 Issue，回复速度取决于作业多不多。',
       foot: '本站纯静态 · 没有追踪 · 连我自己都不知道有多少人看过'
+    },
+    terminal: {
+      title: 'jutian@studio:~$', subtitle: 'whoami → 独立开发者 · since 2026',
+      lede1: '# 目标：把麻烦的操作压缩成一次回车。',
+      lede2: '# 三个仓库已发布，一个在 build 中。',
+      pull: '// 能做出来就先做出来，别在脑子里编译半年。', cite: 'written in README.md, line 1',
+      foot: '-- end of file --'
+    },
+    paper: {
+      title: '巨天工作室', subtitle: '独立技术工作室 · 二〇二六年创立',
+      lede1: '本报讯：一间只有一名成员的技术工作室，近日公开其全部作品源码，称「能用就行」。',
+      lede2: '据介绍，该工作室目前同时推进桌面工具、网页图形与自动化三条产品线，更新节奏取决于课业安排。',
+      pull: '「能做出来就先做出来，做完开源，比讨论半年有意义。」', cite: '—— 该工作室负责人反复强调的一句话',
+      foot: '本报为纯静态页面 · 无广告 · 无追踪'
+    },
+    blueprint: {
+      title: '巨天工作室', subtitle: 'SPEC SHEET / REV. 2026-09',
+      lede1: '项目构成、技术参数与交付状态，见下。',
+      lede2: '所有条目以实际发布版本为准，本图仅供参考。',
+      pull: '规格：小型、独立、开源。误差范围：一个人。', cite: 'TITLE BLOCK — JUTIAN STUDIO',
+      foot: 'DRAFT · 尺寸与参数可能变更'
+    },
+    note: {
+      title: '巨天工作室', subtitle: '一个小本子',
+      lede1: '这里记着我们做过的东西，还有一些没做完的。',
+      lede2: '想到什么就写下来，写错的地方后面再划掉。',
+      pull: '先做出来，再想好不好看。', cite: '—— 写在第一页的话',
+      foot: '写完啦，谢谢看到这里'
+    },
+    pixel: {
+      title: 'JUTIAN STUDIO', subtitle: 'PRESS START',
+      lede1: '1P 已加入。任务：把麻烦的操作变成一次双击。',
+      lede2: '当前关卡：三个项目已通关，第四个仍在加载。',
+      pull: 'DO IT FIRST. SHIP IT OPEN.', cite: 'HIGH SCORE: 3 PROJECTS',
+      foot: 'INSERT COIN TO CONTINUE'
     }
   };
 
@@ -66,20 +101,13 @@
       var pack = MODES[m] || {};
       el.textContent = pack[k] || el.getAttribute('data-orig');
     });
-    var btns = document.querySelectorAll('.mode-switch button');
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].classList.toggle('on', btns[i].getAttribute('data-mode') === m);
-    }
+    var sel = document.getElementById('modeSelect');
+    if (sel) sel.value = m;
     try { localStorage.setItem(MODE_KEY, m); } catch (e) {}
   }
 
-  var sw = document.getElementById('modeSwitch');
-  if (sw) {
-    sw.addEventListener('click', function (e) {
-      var b = e.target.closest ? e.target.closest('button') : null;
-      if (b) applyMode(b.getAttribute('data-mode'));
-    });
-  }
+  var selBox = document.getElementById('modeSelect');
+  if (selBox) selBox.addEventListener('change', function () { applyMode(selBox.value); });
   var savedMode = null;
   try { savedMode = localStorage.getItem(MODE_KEY); } catch (e) {}
   if (savedMode && MODES[savedMode]) applyMode(savedMode);
