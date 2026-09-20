@@ -26,6 +26,11 @@ assets/js/main.js      # 主题切换、移动端菜单、导航高亮（约 40 
 | 章节 | 每个 `<section class="section" id="...">`，同步改页眉导航与目录块 |
 | 项目 | 「项目」章节里的 `<article class="entry">` |
 
+## 风格切换
+
+页眉右侧有「正常 / 猫娘 / 搞笑」三档切换，会替换站点主要文案（标题、章节名、引言、部分 FAQ），选择存在 localStorage。
+文案表在 `assets/js/main.js` 的 `MODES`；要加可变文案，给元素加 `data-v="key"` 即可。
+
 ## 相关
 
 - 个人主页：<https://deepseekv5.github.io/>

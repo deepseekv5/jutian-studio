@@ -25,6 +25,11 @@
     </nav>
     <div class="head-tools">
       <a class="tools-link" href="https://github.com/deepseekv5" target="_blank" rel="noopener">GITHUB</a>
+      <div class="mode-switch" id="modeSwitch">
+        <button type="button" data-mode="normal" class="on">正常</button>
+        <button type="button" data-mode="neko">猫娘</button>
+        <button type="button" data-mode="funny">搞笑</button>
+      </div>
       <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深浅主题">
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.2 5.2l1.4 1.4M17.4 17.4l1.4 1.4M5.2 18.8l1.4-1.4M17.4 6.6l1.4-1.4" stroke-linecap="round"/></svg>
         <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M20.5 13.2A8.6 8.6 0 1 1 10.8 3.5a7 7 0 0 0 9.7 9.7z"/></svg>
@@ -48,24 +53,24 @@
       </dl>
 
       <h1 class="hero-title">
-        巨天工作室
-        <small>Jutian Studio — Independent, Small, Sharp</small>
+        <span data-v="title">巨天工作室</span>
+        <small data-v="subtitle">Jutian Studio — Independent, Small, Sharp</small>
       </h1>
 
       <div class="hero-body">
         <div>
-          <p class="hero-lede">
+          <p class="hero-lede" data-v="lede1">
             一间独立运作的小型技术工作室。我们不做平台，也不追风口，只做一件事：
             把原本需要折腾半小时的麻烦事，压成一次双击、一条命令、一个链接。
           </p>
-          <p class="hero-lede">
+          <p class="hero-lede" data-v="lede2">
             目前三条产品线并行——macOS 原生桌面工具、基于浏览器的 3D 与编辑器增强、
             以及跑在本地的智能体。所有代码公开在 GitHub，许可宽松，欢迎翻、欢迎改、欢迎提意见。
           </p>
         </div>
         <aside class="hero-aside">
           <span class="label">简单说</span>
-          <p>
+          <p data-v="aside">
             巨天工作室成立于 2026 年 8 月，由一名中学生独立运营。没有融资，没有团队，
             也没有路线图 PPT。判断一个想法值不值得做，只用一条标准：做完之后，
             会不会有人真的每天用它。
@@ -92,8 +97,8 @@
 
   <div class="wrap">
     <p class="pull">
-      「能做出来就先做出来。做完开源，比讨论半年有意义。」
-      <cite>—— 一直挂在嘴边的一句话</cite>
+      <span data-v="pull">「能做出来就先做出来。做完开源，比讨论半年有意义。」</span>
+      <cite data-v="cite">—— 一直挂在嘴边的一句话</cite>
     </p>
   </div>
 
@@ -101,8 +106,8 @@
   <section class="section" id="about">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">01</span><h2>关于工作室</h2></div>
-        <p class="sec-note">我们是谁、为什么存在、以及不做什么。</p>
+        <div><span class="sec-num">01</span><h2 data-v="s1">关于工作室</h2></div>
+        <p class="sec-note" data-v="n1">我们是谁、为什么存在、以及不做什么。</p>
       </div>
 
       <div class="entry">
@@ -151,8 +156,8 @@
   <section class="section" id="projects">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">02</span><h2>项目</h2></div>
-        <p class="sec-note">三个已发布，一个在筹备。每个项目都写清楚它能干什么、不能干什么。</p>
+        <div><span class="sec-num">02</span><h2 data-v="s2">项目</h2></div>
+        <p class="sec-note" data-v="n2">三个已发布，一个在筹备。每个项目都写清楚它能干什么、不能干什么。</p>
       </div>
 
       <div class="tbl-wrap">
@@ -182,7 +187,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">把编程猫 KittenN 积木编辑器，整套换成深色玻璃质感。</p>
+          <p class="entry-sub" data-v="e1">把编程猫 KittenN 积木编辑器，整套换成深色玻璃质感。</p>
           <p>
             KittenN 是使用量很大的积木编程编辑器，但它默认只有浅色界面，
             长时间盯着看眼睛很累，夜间尤甚。这个项目的做法很直接：不是写油猴脚本
@@ -225,7 +230,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">不用装客户端，在浏览器里打开地图，直接走进去。</p>
+          <p class="entry-sub" data-v="e2">不用装客户端，在浏览器里打开地图，直接走进去。</p>
           <p>
             Dao3 / Box3 是一个方块创造类平台，玩家在里面搭出各种地图。
             但想看别人做好的地图，通常只能看截图或视频——除非下载专门的客户端。
@@ -267,7 +272,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">在 Mac 上跑 Windows 程序，不装虚拟机，不敲命令。</p>
+          <p class="entry-sub" data-v="e3">在 Mac 上跑 Windows 程序，不装虚拟机，不敲命令。</p>
           <p>
             macOS 用户偶尔会碰到一个 .exe：学校的教学软件、某个只有 Windows 版的小工具、
             同事发来的安装包。为了一个几十兆的程序去装虚拟机或双系统，成本显然太高。
@@ -306,7 +311,7 @@
           </dl>
         </div>
         <div class="entry-body">
-          <p class="entry-sub">一个长在你电脑里的智能体，而不是又一个聊天框。</p>
+          <p class="entry-sub" data-v="e4">一个长在你电脑里的智能体，而不是又一个聊天框。</p>
           <p>
             巨天 Agent 是工作室目前投入最多的项目。它不是一个网页对话框，
             而是一个跑在本地的桌面应用：能开终端执行命令、能读写磁盘上的文件、
@@ -331,8 +336,8 @@
   <section class="section" id="stack">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">03</span><h2>技术选型</h2></div>
-        <p class="sec-note">选型的默认前提是：轻依赖、可离线、可自托管。</p>
+        <div><span class="sec-num">03</span><h2 data-v="s3">技术选型</h2></div>
+        <p class="sec-note" data-v="n3">选型的默认前提是：轻依赖、可离线、可自托管。</p>
       </div>
 
       <div class="tbl-wrap">
@@ -377,8 +382,8 @@
   <section class="section" id="how">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">04</span><h2>工作方式</h2></div>
-        <p class="sec-note">从想法到发布，中间到底发生什么。</p>
+        <div><span class="sec-num">04</span><h2 data-v="s4">工作方式</h2></div>
+        <p class="sec-note" data-v="n4">从想法到发布，中间到底发生什么。</p>
       </div>
 
       <ol class="numlist">
@@ -415,8 +420,8 @@
   <section class="section" id="log">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">05</span><h2>更新记录</h2></div>
-        <p class="sec-note">按时间倒序。只记实际发生的事。</p>
+        <div><span class="sec-num">05</span><h2 data-v="s5">更新记录</h2></div>
+        <p class="sec-note" data-v="n5">按时间倒序。只记实际发生的事。</p>
       </div>
 
       <ul class="log">
@@ -477,17 +482,17 @@
   <section class="section" id="faq">
     <div class="wrap">
       <div class="sec-head">
-        <div><span class="sec-num">06</span><h2>常见问题</h2></div>
-        <p class="sec-note">被问过、或者迟早会被问到的问题。</p>
+        <div><span class="sec-num">06</span><h2 data-v="s6">常见问题</h2></div>
+        <p class="sec-note" data-v="n6">被问过、或者迟早会被问到的问题。</p>
       </div>
 
       <div class="faq">
         <details open>
-          <summary>工作室是公司在运营吗？</summary>
+          <summary data-v="q1">工作室是公司在运营吗？</summary>
           <div class="a"><p>不是。目前没有任何公司实体，也没有团队成员，全部工作由一个人完成。就是字面意义上的一个人，没有别的说法。</p></div>
         </details>
         <details>
-          <summary>为什么所有项目都开源？</summary>
+          <summary data-v="q2">为什么所有项目都开源？</summary>
           <div class="a"><p>两个原因。一是这些工具本来就是为"自己要用"而写的，开源不会损失什么；二是开源之后别人可以直接接手，项目不至于因为某天没人维护就彻底消失。</p></div>
         </details>
         <details>
@@ -499,7 +504,7 @@
           <div class="a"><p>看具体项目的许可证。KittenN Cyberpunk Editor 是 MIT，可以商用；Arcadia Base 沿用上游 box3lab/Arcadia-base 的许可条款，商用前请先确认上游要求。涉及方块贴图与地图数据的部分请自行确认授权。</p></div>
         </details>
         <details>
-          <summary>巨天 Agent 什么时候能下载？</summary>
+          <summary data-v="q3">巨天 Agent 什么时候能下载？</summary>
           <div class="a"><p>目前是预览版，尚未开放下载，也没有确定的发布日期。可以确定的是两个平台都会做：macOS（Apple Silicon）与 Windows（x64）。发布消息会在 GitHub 与巨天 Agent 官网同步。</p></div>
         </details>
         <details>
@@ -524,10 +529,10 @@
       <div class="contact-grid">
         <div>
           <span class="sec-num">07</span>
-          <h2 style="font-family:var(--serif);font-size:30px">联系</h2>
+          <h2 data-v="s7" style="font-family:var(--serif);font-size:30px">联系</h2>
         </div>
         <div>
-          <p>
+          <p data-v="contact1">
             想法、Bug、合作邀约都可以直接来 GitHub。我们读每一条 Issue，
             只是回复速度取决于课业安排——如果不急，请给它一点时间。
           </p>
@@ -577,7 +582,7 @@
     </div>
     <div class="foot-note">
       <span>© 2026 巨天工作室</span>
-      <span>本站纯静态 · 无统计 · 无 Cookie</span>
+      <span data-v="foot">本站纯静态 · 无统计 · 无 Cookie</span>
       <span>最后更新 2026-09-16</span>
       <span>写错的地方欢迎开 Issue 指出</span>
     </div>
