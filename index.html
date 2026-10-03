@@ -7,10 +7,11 @@
 <meta name="description" content="巨天工作室（JUTIAN STUDIO）是一间独立技术工作室，做 macOS 桌面工具、浏览器自动化增强、3D 网页运行器，以及桌面 AI 智能体「巨天 Agent」。全部项目源码开源在 GitHub，许可宽松，欢迎使用与二次开发。" />
 <meta name="theme-color" content="#f7f4ee" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f7f4ee'/%3E%3Cpath d='M7 8h18v3H10v13h15v3H7z' fill='%23a8361f'/%3E%3C/svg%3E" />
+<link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="assets/css/style.css" /></noscript>
 <link rel="stylesheet" href="assets/css/style.css" />
 <!-- SEO -->
 <meta name="google-site-verification" content="0QuN1OhIfbTyOqvgfSHFW5g3BDeg6sVZmkN8u-fIl1M" />
-<meta name="keywords" content="巨天工作室,JUTIAN STUDIO,独立开发者,开源项目,macOS 工具,桌面应用,自动化,Playwright,Three.js,浏览器自动化,巨天Agent,AI 智能体,KittenN 编辑器,Arcadia,Web3D,学生开发者" />
 <meta name="author" content="deepseekv5" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
 <link rel="canonical" href="https://deepseekv5.github.io/jutian-studio/" />
@@ -79,6 +80,78 @@
    "programmingLanguage": "Python"
   }
  ]
+}</script>
+<!-- FAQ 结构化数据（与页面可见问答一致） -->
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "工作室是公司在运营吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "不是。目前没有任何公司实体，也没有团队成员，全部工作由一个人完成。就是字面意义上的一个人，没有别的说法。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "为什么所有项目都开源？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "两个原因。一是这些工具本来就是为\"自己要用\"而写的，开源不会损失什么；二是开源之后别人可以直接接手，项目不至于因为某天没人维护就彻底消失。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "项目会长期维护吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "不做承诺。活跃的、自己每天都在用的项目会持续更新；用不上的会进入低频维护状态。所有代码开源，任何人都可以 fork 出去继续做。 如果你希望接手某个项目的维护，直接开 Issue 说就行，我们很乐意把维护权交出去。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "可以商用吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "看具体项目的许可证。KittenN Cyberpunk Editor 是 MIT，可以商用；Arcadia Base 沿用上游 box3lab/Arcadia-base 的许可条款，商用前请先确认上游要求。涉及方块贴图与地图数据的部分请自行确认授权。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "巨天 Agent 什么时候能下载？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "目前是预览版，尚未开放下载，也没有确定的发布日期。可以确定的是两个平台都会做：macOS（Apple Silicon）与 Windows（x64）。发布消息会在 GitHub 与巨天 Agent 官网同步。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "网站有没有统计脚本或 Cookie？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "没有。这三个站点都是纯静态页面，不含统计、不含广告、不含 Cookie，也不加载任何第三方资源。深浅主题偏好存在浏览器 localStorage 里，只在本机生效。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "发现了 Bug 怎么反馈？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "在对应仓库开 Issue 是最快的方式。请附上系统版本、项目版本、复现步骤和完整报错信息——尤其是终端里的原始输出，比截图有用得多。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "可以找工作室做定制开发吗？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "目前不接商业项目。如果你有一个具体的、开源的小工具想法，可以开 Issue 聊，觉得有意思的话我们有可能会做。"
+   }
+  }
+ ],
+ "url": "https://deepseekv5.github.io/jutian-studio/#faq"
 }</script>
 </head>
 <body>
@@ -242,7 +315,7 @@
 
       <div class="tbl-wrap">
         <table class="tbl">
-          <thead><tr><th>项目</th><th>状态</th><th>主要语言</th><th>平台</th><th>最近更新</th></tr></thead>
+          <thead><tr><th scope="col">项目</th><th scope="col">状态</th><th scope="col">主要语言</th><th scope="col">平台</th><th scope="col">最近更新</th></tr></thead>
           <tbody>
             <tr><td>KittenN Cyberpunk Editor</td><td>已发布</td><td>JavaScript</td><td>三平台</td><td>2026-08-28</td></tr>
             <tr><td>Arcadia Base 网页运行器</td><td>已发布</td><td>TypeScript</td><td>浏览器</td><td>2026-08-29</td></tr>
@@ -423,7 +496,7 @@
       <div class="tbl-wrap">
         <table class="tbl">
           <thead>
-            <tr><th>层次</th><th>技术</th><th>用在哪里</th><th>为什么选它</th></tr>
+            <tr><th scope="col">层次</th><th scope="col">技术</th><th scope="col">用在哪里</th><th scope="col">为什么选它</th></tr>
           </thead>
           <tbody>
             <tr><td>语言</td><td>TypeScript</td><td>Arcadia Base 全栈</td><td>图形与数据结构复杂，类型能挡掉大量低级错误</td></tr>
@@ -508,49 +581,49 @@
         <li>
           <time>2026-09-12</time>
           <div>
-            <h4>三个站点改版</h4>
+            <h3>三个站点改版</h4>
             <p>工作室官网、巨天 Agent 官网、个人主页统一改为编辑排版风格：纸感底色、细线分隔、衬线标题，去掉全部装饰性动画。</p>
           </div>
         </li>
         <li>
           <time>2026-09-12</time>
           <div>
-            <h4>巨天 Agent 官网上线</h4>
+            <h3>巨天 Agent 官网上线</h4>
             <p>独立站点发布，含能力说明、思考程度演示、技术规格与路线图。</p>
           </div>
         </li>
         <li>
           <time>2026-09-12</time>
           <div>
-            <h4>个人主页上线</h4>
+            <h3>个人主页上线</h4>
             <p>个人主页上线，作为作品与工作室的入口索引。</p>
           </div>
         </li>
         <li>
           <time>2026-08-29</time>
           <div>
-            <h4>Arcadia Base 网页运行器</h4>
+            <h3>Arcadia Base 网页运行器</h4>
             <p>完成真实方块贴图、流体渲染、三模式相机与模型解析，仓库同步更新 README 与致谢。</p>
           </div>
         </li>
         <li>
           <time>2026-08-28</time>
           <div>
-            <h4>WineAppRunner v1.0</h4>
+            <h3>WineAppRunner v1.0</h4>
             <p>首个版本发布：图形界面选择 exe、实时日志、依赖检测、打包为独立 .app。</p>
           </div>
         </li>
         <li>
           <time>2026-08-28</time>
           <div>
-            <h4>KittenN Cyberpunk Editor</h4>
+            <h3>KittenN Cyberpunk Editor</h4>
             <p>深色玻璃主题完成，支持 macOS / Linux / Windows，附环境检测与浏览器路径选择工具。</p>
           </div>
         </li>
         <li>
           <time>2026-08-27</time>
           <div>
-            <h4>工作室成立</h4>
+            <h3>工作室成立</h4>
             <p>GitHub 账号建立，第一批工具项目开始开源。</p>
           </div>
         </li>

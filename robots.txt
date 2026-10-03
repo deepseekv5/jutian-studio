@@ -1,13 +1,27 @@
+# robots.txt — 巨天工作室 / deepseekv5
+# 纯静态站点，无追踪、无 Cookie，全站公开。
+
 User-agent: *
 Allow: /
+Disallow: /404.html
 
+# AI 爬虫
 User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: Baiduspider
 Allow: /
 
-User-agent: Googlebot
+User-agent: Bingbot
 Allow: /
 
 Sitemap: https://deepseekv5.github.io/jutian-studio/sitemap.xml

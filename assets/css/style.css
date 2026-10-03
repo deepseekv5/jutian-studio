@@ -173,7 +173,7 @@ td .tag { font-family: var(--mono); font-size: 11px; padding: 2px 7px; border: 1
 .log { border-top: 1px solid var(--rule); }
 .log li { display: grid; grid-template-columns: 110px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid var(--rule-2); }
 .log time { font-family: var(--mono); font-size: 11.5px; color: var(--ink-3); letter-spacing: .06em; padding-top: 3px; }
-.log h4 { font-size: 15px; margin-bottom: 4px; }
+.log h3 { font-size: 15px; margin-bottom: 4px; font-weight: 600; }
 .log p { font-size: 13.5px; color: var(--ink-2); }
 
 /* ============================ FAQ ============================ */
